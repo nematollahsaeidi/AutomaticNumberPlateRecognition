@@ -99,6 +99,3 @@ ANPR/
    ```
 
 4. Access the application at `http://127.0.0.1:5000/` in your web browser.
-
-## Author
-Nematollah Saeidi
