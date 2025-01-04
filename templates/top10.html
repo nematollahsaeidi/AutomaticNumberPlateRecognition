@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<title> ANPR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/styles/base_style.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+<!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.jqueryui.min.css">-->
+
+
+<head>
+	<title>Web Application</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/styles/demo.css" />
+    <link rel="stylesheet" href="/static/styles/jquery.md.bootstrap.datetimepicker.style.css" />
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1800px">
+
+<!--<div class="w3-opacity-min">-->
+<span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa"></i></span>
+<div class="w3-clear"></div>
+  <h2><b>  سرویس تشخیص خودکار پلاک خودرو</b></h2>
+  <p><b>نسخه ی آزمایشی ساخته شده به منظور اهداف ارزیابی</b></p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript"  src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"  src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function(){
+        $('#table_content').dataTable({"columns": [{"searchable": true}, {"searchable": true},
+        {"searchable": false}, {"searchable": false}, {"searchable": false}, {"searchable": false},
+        {"searchable": false}, {"searchable": false}]});
+});
+</script>
+    <h2> نمایش 10 تردد آخر </h2>
+    <div class="w3-content" style="max-width:1300px">
+        <table class="w3-table w3-striped w3-bordered w3-centered" id="table_content" style="max-width:1300px">
+            <thead>
+            <tr>
+                <th>شناسه پرسنلی</th>
+                <th>نام خانوادگی</th>
+                <th>نام</th>
+                <th>پلاک</th>
+                <th>تاریخ</th>
+                <th>ساعت</th>
+                <th>تصویر فرد</th>
+                <th>تصویر خودرو</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in info_number %}
+            <tr>
+                <td>{{info_number[loop.index-1]}}</td>
+                <td>{{info_family[loop.index-1]}}</td>
+                <td>{{info_name[loop.index-1]}}</td>
+                <td>
+                    <div class="container" style="font-size: 50px;">
+                        <div class="license-plate">
+                            <div class="blue-column">
+                                <div class="flag">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="text">
+                                    <div>I.R.</div>
+                                    <div>IRAN</div>
+                                </div>
+                            </div>
+                            <span>{{info_plate[loop.index-1][0:2]}}</span>
+                            <span class="alphabet-column">{{info_plate[loop.index-1][2]}}</span>
+                            <span>{{info_plate[loop.index-1][3:6]}}</span>
+                            <div class="iran-column">
+                                <span>ایــران</span>
+                                <strong><span>{{info_plate[loop.index-1][7:9]}}</span></strong>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>{{info_date[loop.index-1]}}</td>
+                <td>{{info_time[loop.index-1]}}</td>
+                <td>
+                    <img src="/static/{{ info_image_person[loop.index-1] }}" onclick="onClick(this)" alt="{{url}}" width="200" height="150">
+                </td>
+                <td>
+                    <img src="/static/{{ info_image_car[loop.index-1] }}" onclick="onClick(this)" alt="{{url}}" width="200" height="150">
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>شناسه پرسنلی</th>
+                <th>نام خانوادگی</th>
+                <th>نام</th>
+                <th>پلاک</th>
+                <th>تاریخ</th>
+                <th>ساعت</th>
+                <th>تصویر فرد</th>
+                <th>تصویر خودرو</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<script src="/static/scripts/base_scripts.js"></script>
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by</p>
+    <img src="/static/research.png" alt="Avatar" class="w3-margin-right" style="width:100px">
+    <img src="https://avatars3.githubusercontent.com/u/25844347?s=280&v=4" alt="Avatar" class="w3-circle w3-margin-right" style="width:40px">
+    <img src="https://fanap.ir/images/fanap-logo.png" alt="Avatar" class="w3-circle w3-margin-right" style="width:40px">
+</footer>
+</body>
+</html>

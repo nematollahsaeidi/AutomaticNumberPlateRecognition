@@ -1,0 +1,190 @@
+
+h2, h1 {text-align: center;}
+p {text-align: center;}
+
+input[type=text], [type=number], [type=tel], [type=file], [type=date], [type=time], select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  text-align: center;
+}
+
+.spanday {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  text-align: center;
+}
+
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+table.center_fix_weight {
+  margin-left:auto;
+  margin-right:auto;
+  table-layout:fixed;
+  width: 800px;
+}
+
+table.center_fix_weight td { overflow: hidden; }
+
+button {
+  font-size:17px;
+  width:300px;
+}
+
+label {
+  font-size:19px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+#table_content td
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+form {
+width:auto;
+margin: 0 auto;}
+
+body,h1,h2,th,td,p,button,label,text {font-family: "B Nazanin", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+
+th, td {
+  text-align: center;
+  font-weight: bold;
+  font-size:18px;
+  vertical-align: middle;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+.container{
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  align-items: center;
+}
+
+.license-plate {
+  margin: 0 auto;
+  min-width: 6.8em;
+  display: inline-block;
+  border-radius: 0.2em;
+  border: 0.08em solid #333;
+  font-family: "B Nazanin", sans-serif;
+  height: 1.3em;
+  line-height: 1.1em;
+  background-color: #ddd;
+  text-align: center;
+  color: rgb(40, 47, 37);
+  box-shadow: inset 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.3),
+    inset -0.05em -0.05em 0.1em #ffffff, 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.3);
+}
+
+.license-plate > .blue-column {
+  width: 0.7em;
+  height: 1.18em;
+  float: left;
+  background-color: #042591;
+  position: relative;
+}
+
+.license-plate > .blue-column > .flag {
+  margin: 0.1em;
+}
+
+.license-plate > .blue-column > .flag :nth-child(1) {
+  height: 0.1em;
+  background-color: green;
+}
+
+.license-plate > .blue-column > .flag :nth-child(2) {
+  height: 0.1em;
+  background-color: #fff;
+}
+
+.license-plate > .blue-column > .flag :nth-child(3) {
+  height: 0.1em;
+  background-color: red;
+}
+
+.license-plate > .blue-column > .text {
+  color: #ffffff;
+  font-size: 0.2em;
+  line-height: 1em;
+  text-align: left;
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+}
+
+.license-plate > span {
+  margin: 0 0.1em;
+  font-size: 1.2em;
+
+  padding: 0.05em;
+  display: inline-block;
+  text-shadow: 0.02em 0.02em 0.03em rgba(0, 0, 0, 0.3),
+    -0.03em -0.03em 0.02em #fff;
+  float: left;
+}
+
+.license-plate > .alphabet-column {
+  line-height: 0.5em;
+  margin: 0;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.license-plate > .iran-column {
+  width: 1.2em;
+  text-align: center;
+  float: right;
+  border-left: 0.08em solid #333;
+  height: 1.18em;
+}
+
+.license-plate > .iran-column > span {
+  font-size: 0.3em;
+  display: block;
+  line-height: 1em;
+}
+
+.license-plate > .iran-column > strong {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 0.9em;
+  text-shadow: 0.03em 0.03em 0.03em rgba(0, 0, 0, 0.3),
+    -0.04em -0.04em 0.02em #fff;
+}
