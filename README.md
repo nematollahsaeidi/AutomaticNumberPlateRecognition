@@ -1,6 +1,6 @@
 # Automatic Number Plate Recognition (ANPR)
 
-This repository contains the implementation of an Automatic Number Plate Recognition (ANPR) system. The project is built using Python and Flask and provides functionalities such as registering vehicles, searching for vehicle data, and displaying top records based on license plates. It also includes an attendance management feature for tracking user activity within specified time and date ranges.
+This repository contains the implementation of an Automatic Number Plate Recognition (ANPR) system. The project is built using Python and Flask and provides functionalities such as registering vehicles, searching for vehicle data, and displaying top records based on license plates. It also includes an attendance management feature for tracking user activity within specified time and date ranges. This project was implemented in 2021-2022.
 
 ## Features
 
